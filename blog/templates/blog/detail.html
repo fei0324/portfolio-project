@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="../../../../favicon.ico">
 
-	<title>Fei</title>
+	<title>{{ blog.title }}</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -37,33 +37,18 @@
 
 		<section class="jumbotron text-center">
 			<div class="container">
-				<h1 class="jumbotron-heading">Hi, I'm Fei.</h1>
-				<p class="lead text-muted">Hey, my name is Fei. I am a recent graduate from American University with a degree in Mathematics and a second major in Computational Science. I am currently looking for a position in data analysis, software development or web development.</p>
-				<p>
-					<a href="mailto:fangfei.lan@gmail.com" class="btn btn-primary my-2">Email Me</a>
-				</p>
+				<h1 class="jumbotron-heading">{{ blog.title }}</h1>
 			</div>
 		</section>
 
-		<div class="album py-5 bg-light">
+		<div>
 			<div class="container">
 
-				<div class="row">
+				<p>{{ blog.pub_date }}</p>
+				<center><img class="img-fluid" src="{{ blog.image.url }}" height=600 width=600></center>
+				<br>
+				<p>{{ blog.body }}</p>
 
-					{% for job in jobs.all %}
-
-					<div class="col-md-4">
-						<div class="card mb-4 box-shadow">
-							<img class="card-img-top" src="{{ job.image.url }}">
-							<div class="card-body">
-								<p class="card-text">{{ job.summary }}</p>
-							</div>
-						</div>
-					</div>	
-
-					{% endfor %}
-
-				</div>
 			</div>
 		</div>
 
